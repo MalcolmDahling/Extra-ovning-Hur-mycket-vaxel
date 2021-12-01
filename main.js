@@ -1,28 +1,19 @@
-function purchase(price, payment){
+function purchase(price, pay){
 
-    if(price > payment){
+    if(price > pay){
         console.log('Too expensive.');
     }
 
     else{
-        let d100 = (payment-price)/100;
-        let d50 = (payment-price)/50;
-        let d20 = (payment-price)/20;
-        let d10 = (payment-price)/10;
-        let d5 = (payment-price)/5;
-        let d2 = (payment-price)/2;
-        let d1 = (payment-price)/1;
-
-
-        let pay = payment;
-        pay = pay%100;
-
-
-
-
         console.log('Price: ' + price + 'kr.');
-        console.log('Payment: ' + payment + 'kr.');
-        console.log('Change: ' + (payment-price) + 'kr.');
+        console.log('Payment: ' + pay + 'kr.');
+        console.log('Change: ' + (pay-price) + 'kr.');
+
+        let d100, d50, d20, d10, d5, d2, d1;
+        let a;
+
+        d100 = Math.floor((pay-price)/100);
+
         console.log('Change denominations:');
         console.log('100kr note: ' + d100);
         console.log('50kr note: ' + d50);

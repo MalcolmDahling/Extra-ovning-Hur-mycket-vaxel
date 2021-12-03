@@ -10,9 +10,29 @@ function purchase(price, pay){
         console.log('Change: ' + (pay-price) + 'kr.');
 
         let d100, d50, d20, d10, d5, d2, d1;
-        let a;
+        let change = pay - price;
 
-        d100 = Math.floor((pay-price)/100);
+        d100 = Math.floor( (change)/100 );
+        change = change-d100*100;
+
+        d50 = Math.floor( (change)/50 );
+        change = change-d50*50;
+
+        d20 = Math.floor( (change)/20 );
+        change = change-d20*20;
+
+        d10 = Math.floor( (change)/10 );
+        change = change-d10*10;
+
+        d5 = Math.floor( (change)/5 );
+        change = change-d5*5;
+
+        d2 = Math.floor( (change)/2 );
+        change = change-d2*2;
+
+        d1 = Math.floor( (change)/1 );
+        change = change-d1*1;
+
 
         console.log('Change denominations:');
         console.log('100kr note: ' + d100);
@@ -27,4 +47,4 @@ function purchase(price, pay){
 
 
 
-purchase(100, 250);
+purchase(100, 251); //price, pay
